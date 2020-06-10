@@ -21,6 +21,7 @@ const StyledTitle = styled.h1`
   text-shadow: 1px 1px 5px #fff;
   background-color: #8ffd44;
   border-radius: 10px;
+  padding: 2%;
 `;
 
 const store = createStore(reducer, applyMiddleware(thunk));

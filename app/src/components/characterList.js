@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getData } from "../actions";
 import styled from "styled-components";
+import audio from "../assets/balls.mp3";
 
 const OutsideDiv = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
@@ -33,15 +34,24 @@ const InsideDiv = styled.div`
   h2 {
     border-radius: 8px;
     background-color: #8ffd44;
+    color: black;
   }
   p {
     border-radius: 8px;
     background-color: #8ffd44;
+    color: black;
   }
 `;
 
 const CharacterList = (props) => {
+  const audio = new Audio("../assets/balls.mp3");
+
+  const start = () => {
+    audio.play();
+  };
+
   useEffect(() => {
+    start();
     props.getData();
   }, []);
 
