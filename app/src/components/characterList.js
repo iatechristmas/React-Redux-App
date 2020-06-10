@@ -2,23 +2,22 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getData } from "../actions";
 import styled from "styled-components";
-import audio from "../assets/balls.mp3";
 
 const OutsideDiv = styled.div`
-  @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
   display: flex;
   flex-flow: wrap;
   margin: auto;
-  padding: 5%; */
-  width: 50%;
-  font-family: 'Amatic SC', cursive;
+  padding: 5%;
+  width: 80%;
+  font-family: "Amatic SC", cursive;
 `;
 
 const InsideDiv = styled.div`
   background-color: white;
   padding: 1%;
   margin: 1%;
-  width: 20%;
+  width: 15%;
   border: 2px solid #8ffd44;
   border-radius: 8px;
   box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
@@ -44,14 +43,7 @@ const InsideDiv = styled.div`
 `;
 
 const CharacterList = (props) => {
-  const audio = new Audio("../assets/balls.mp3");
-
-  const start = () => {
-    audio.play();
-  };
-
   useEffect(() => {
-    start();
     props.getData();
   }, []);
 
