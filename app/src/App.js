@@ -2,13 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-import { createStore, applyMiddleware } from "redux";
-import { Provider } from "react-redux";
-import thunk from "redux-thunk";
-
 import styled from "styled-components";
-
-import { characterReducer as reducer } from "./reducers/characterReducer";
 
 import CharacterList from "./components/characterList";
 import CharacterForm from "./components/characterForm";
@@ -24,19 +18,15 @@ const StyledTitle = styled.h1`
   padding: 2%;
 `;
 
-const store = createStore(reducer, applyMiddleware(thunk));
-
 function App() {
   return (
-    <Provider store={store}>
-      <div className="App">
-        <header className="App-header">
-          <StyledTitle>Show Me What You Got</StyledTitle>
-          <CharacterForm />
-          <CharacterList />
-        </header>
-      </div>
-    </Provider>
+    <div className="App">
+      <header className="App-header">
+        <StyledTitle>Show Me What You Got</StyledTitle>
+        <CharacterForm />
+        <CharacterList />
+      </header>
+    </div>
   );
 }
 
